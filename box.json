@@ -17,7 +17,7 @@
         
     ],
     "main": "bin/wptesttools",
-    "output": "wptesttools.phar",
+    "output": "bin/wptesttools.phar",
     "git-version": "package_version",
     "stub": true
 }

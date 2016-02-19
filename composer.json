@@ -25,6 +25,8 @@
     
     "require-dev": {
         "kherge/box": "~2.6.1"
-    }
+    },
+    
+    "bin": [ "bin/wptesttools.phar" ]
 
 }
