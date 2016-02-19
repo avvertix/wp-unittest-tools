@@ -1,0 +1,23 @@
+{
+    "chmod": "0755",
+    "directories": [
+        "bin", "src", "stub"
+    ],
+    "finder": [
+        {
+            "name": "*.php",
+            "exclude": [
+                "test", 
+                "tests",
+                "Tests",
+                "Test", 
+                ".git", "*.md"],
+            "in": "vendor"
+        }
+        
+    ],
+    "main": "bin/wptesttools",
+    "output": "wptesttools.phar",
+    "git-version": "package_version",
+    "stub": true
+}

@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+require __DIR__.'/../vendor/autoload.php';
+
+use WpUnitTools\App\WpUnitToolsApplication;
+
+$application = new WpUnitToolsApplication('Wordpress Unit Test Tools', '@package_version@');
+$application->run();

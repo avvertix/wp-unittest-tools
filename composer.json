@@ -1,0 +1,30 @@
+{
+    "name": "avvertix/wptesttool",
+    "description": "The Command Line Interface for creating the Wordpress unit test environment for your plugin.",
+    "version": "1.0.0",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alessio Vertemati",
+            "email": "alessio@avsoft.it"
+        }
+    ],
+    "autoload" : {
+        "psr-4": {
+			"WpUnitTools\\": "src/"
+		}
+    },
+    
+    "require": {
+        "jyxo/php" : "~3.1.0",
+        "seld/jsonlint": "1.*",
+        "symfony/console": "~2.8",
+        "symfony/finder": "~2.8",
+        "guzzlehttp/guzzle": "^6.1"
+    },
+    
+    "require-dev": {
+        "kherge/box": "~2.6.1"
+    }
+
+}
