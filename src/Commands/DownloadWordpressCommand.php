@@ -53,10 +53,12 @@ class DownloadWordpressCommand extends Command
 
         
         $client = new \GuzzleHttp\Client();
-            
-        $output->writeln( 'Downloading Wordpress '. $wp_version .'...' );
         
-        $this->downloadTo( $wp_obj->package, $this->getRealPath( './tmp/wordpress.zip' ) );
+        if( !$this->isFile('./tmp/wordpress-'.$wp_version.'.zip' ) ){
+            $output->writeln( 'Downloading Wordpress '. $wp_version .'...' );
+        
+            $this->downloadTo( $wp_obj->package, $this->getRealPath( './tmp/wordpress-'.$wp_version.'.zip' ) );
+        }
         
         // if( $res->getStatusCode() !== 200 ){
         //     throw new \Exception("Cannot retrieve Wordpress $wp_version distributable. Error " . $res->getStatusCode() . ' - ' . $res->getReasonPhrase(), 1);

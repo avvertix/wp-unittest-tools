@@ -52,8 +52,8 @@ class InstallWordpressTestSuiteCommand extends Command
         $output->writeln( 'Checking out Wordpress '. $wp_version .' test includes...' );
         
         
-        $includes_file = $this->getRealPath( './tmp/includes'. $wp_version .'.html' );
-        $includes_directory = $this->getRealPath( './tmp/includes/' );
+        $includes_file = $this->getRealPath( $wp_tests_dir . 'includes/includes-'. $wp_version .'.html' );
+        $includes_directory = $this->getRealPath( $wp_tests_dir . 'includes/' );
         
         if( !$this->isDir( $includes_directory ) ){
             $this->createDir( $includes_directory );

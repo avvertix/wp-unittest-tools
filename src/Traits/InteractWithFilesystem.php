@@ -85,9 +85,9 @@ trait InteractWithFilesystem
     
     public function getWordpressTestsDirectory( InputInterface $input ){
         
-        $dir = $input->getOption('test-dir', './tmp/wordpress-tests-lib/');
+        $dir = $input->getOption('test-dir', './tmp/wordpress/');
         if( is_null( $dir ) ){
-            $dir = './tmp/wordpress-tests-lib/';
+            $dir = './tmp/wordpress/';
         }
         
         if( !$this->isDir( $dir ) ){
