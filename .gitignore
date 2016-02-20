@@ -1,2 +1,6 @@
 /tmp/*
 vendor
+# Ignore example tests and files created to test the overall system
+plugin-tests
+plugin.php
+phpunit-plugin.xml
