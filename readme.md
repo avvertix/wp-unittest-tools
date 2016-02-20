@@ -3,7 +3,8 @@
 This project serves as command line to enable the download of the Wordpress Unittests helper functions and setup the environment for executing your plugin Unit Tests
 
 
-This suite is heavily inspired by the WP-API install-wp-test.sh shell script
+This suite is heavily inspired by the [WordPress REST API plugin](https://github.com/WP-API/WP-API) [install-wp-test.sh](https://github.com/WP-API/WP-API/blob/develop/bin/install-wp-tests.sh) shell script. 
+That script was a great source to learn how to unittest Wordpress plugins.
 
 
 ## What?
@@ -58,7 +59,7 @@ To create the stub files launch
 | `plugin` | You can specify the file that will be readed by Wordpress to load the plugin |
 
 
-the boostrap will enable the usage of an environment variable called `PLUGIN_FILE` you can use to specify the main file that will load the plugin in Wordpress.
+The boostrap will enable the usage of an environment variable called `PLUGIN_FILE` you can use to specify the main file that will load the plugin in Wordpress.
 
 
 ## Full Commands List
@@ -108,3 +109,5 @@ Creates the `phpunit.xml` and a `boostrap.php` file that define the uni tests co
 
 
 the phpunit.xml file will be created in the current directory from which the wptesttools binary is executed, while the boostrap.php will be created in the `test-folder`.
+
+**calling multiple times the `stub` command will overwrite existing files**
