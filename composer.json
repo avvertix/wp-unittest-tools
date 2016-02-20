@@ -24,7 +24,8 @@
     },
     
     "require-dev": {
-        "kherge/box": "~2.6.1"
+        "kherge/box": "~2.6.1",
+        "phpunit/phpunit": "~4.5"
     },
     
     "bin": [ "bin/wptesttools.phar" ]
