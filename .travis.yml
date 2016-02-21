@@ -10,3 +10,7 @@ install:
   - travis_retry composer install --no-interaction
 
 script: ./vendor/bin/phpunit
+
+notifications:
+  email:
+    on_success: never
