@@ -51,10 +51,11 @@ class StubsCommand extends Command
             $this->createDir($test_folder);
         }
 
+        $pharFile = \Phar::running(true);
 
-        $phpunit_stub_path = './stub/phpunit.xml';
-        $bootstrap_stub_path = './stub/bootstrap.php';
-        $exampletest_stub_path = './stub/example-test-case.php';
+        $phpunit_stub_path = '' === $pharFile ? './stub/phpunit.xml' : $pharFile . '/stub/phpunit.xml';
+        $bootstrap_stub_path = '' === $pharFile ? './stub/bootstrap.php' : $pharFile . '/stub/bootstrap.php' ;
+        $exampletest_stub_path = '' === $pharFile ? './stub/example-test-case.php' : $pharFile . '/stub/example-test-case.php' ;
         
         
         $wp_tests_config = file_get_contents( $phpunit_stub_path );
