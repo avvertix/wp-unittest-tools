@@ -4,3 +4,4 @@ vendor
 plugin-tests
 plugin.php
 phpunit-plugin.xml
+plugin-phpunit.xml
