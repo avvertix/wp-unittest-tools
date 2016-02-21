@@ -36,6 +36,13 @@ class StubsCommand extends Command
                 'The main file of the Wordpress plugin to test.',
                 'false'
             )
+            ->addOption(
+                'phpunit',
+                null,
+                InputOption::VALUE_REQUIRED,
+                'The name of the phpunit configuration file.',
+                'phpunit.xml'
+            )
             
         ;
     }
@@ -46,6 +53,7 @@ class StubsCommand extends Command
         $test_folder = $input->getArgument('test-folder');
         
         $plugin = $input->getOption('plugin');
+        $phpunit_filename = $input->getOption('phpunit');
 
         if( !$this->isDir($test_folder) ){
             $this->createDir($test_folder);
@@ -66,12 +74,12 @@ class StubsCommand extends Command
         $output->writeln( 'Creating example test case file (example-test-case.php)...' );
         copy( $exampletest_stub_path, $test_folder . '/example-test-case.php' );
         
-        $output->writeln( 'Creating phpunit.xml file...' );
+        $output->writeln( 'Creating '. $phpunit_filename .' file...' );
         $wp_tests_config = preg_replace( '/({test_folder})/', $test_folder, $wp_tests_config );
         $wp_tests_config = preg_replace( '/({test_folder})/', $test_folder, $wp_tests_config );
         $wp_tests_config = preg_replace( '/({PLUGIN_FILE})/', $plugin, $wp_tests_config );
         
-        file_put_contents( './phpunit.xml', $wp_tests_config );
+        file_put_contents( './' . $phpunit_filename, $wp_tests_config );
         
         $output->writeln( 'Stub creation completed.' );
 

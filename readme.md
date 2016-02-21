@@ -108,6 +108,7 @@ Creates the `phpunit.xml` and a `boostrap.php` file that define the uni tests co
 | option   | description                |
 | -------- | ---------------------- |
 | `plugin` | You can specify the file that will be readed by Wordpress to load the plugin |
+| `phpunit` | You can specify the PHPUnit configuration file name (default `phpunit.xml`) |
 
 
 the phpunit.xml file will be created in the current directory from which the wptesttools binary is executed, while the boostrap.php will be created in the `test-folder`.
