@@ -19,7 +19,7 @@ This toolset, available also in a phar version, downloads the Wordpress release,
 In order to configure the required dependencies neeeded to execute a Wordpress based unit test execute:
 
 ```
-[php] wptesttools.phar configure [--db=] [--user=] [--pass=] [--host=] [wp-version]
+[php] ./bin/wptesttools.phar configure [--db=] [--user=] [--pass=] [--host=] [wp-version]
 ```
 
 **Available parameters**
@@ -47,7 +47,7 @@ Now you can create a stub of the `phpunit.xml` file and the bootstrap to be load
 To create the stub files launch
 
 ```
-[php] wptesttools.phar stub [--plugin=plugin.php] [test-folder]
+[php] ./bin/wptesttools.phar stub [--plugin=plugin.php] [test-folder]
 ```
 
 | parameter    | purpose |
@@ -70,7 +70,7 @@ The boostrap will enable the usage of an environment variable called `PLUGIN_FIL
 Download a Wordpress version and extracts into `./tmp/wordpress/`
 
 ```
-[php] wptesttools.phar downloadwp [wp-version]
+[php] ./bin/wptesttools.phar downloadwp [wp-version]
 ```
 
 | parameter    | purpose |
@@ -83,7 +83,7 @@ Download a Wordpress version and extracts into `./tmp/wordpress/`
 Download the Wordpress unit test inclusions and the example wp-config to be used wjen running the tests. The folder used is `./tmp/`
 
 ```
-[php] wptesttools.phar installwp [wp-version]
+[php] ./bin/wptesttools.phar installwp [wp-version]
 ```
 
 | parameter    | purpose |
@@ -96,7 +96,7 @@ Download the Wordpress unit test inclusions and the example wp-config to be used
 Creates the `phpunit.xml` and a `boostrap.php` file that define the uni tests configuration and the loader of the dependencies for running the tests.
 
 ```
-[php] wptesttools.phar stub [--plugin=plugin.php] [test-folder]
+[php] ./bin/wptesttools.phar stub [--plugin=plugin.php] [test-folder]
 ```
 
 | parameter    | purpose |
