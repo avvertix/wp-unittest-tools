@@ -28,6 +28,10 @@
         "phpunit/phpunit": "~4.5"
     },
     
-    "bin": [ "bin/wptesttools.phar" ]
+    "bin": [ "bin/wptesttools.phar" ],
+    
+    "scripts" : {
+        "box" : "\"./vendor/bin/box\" build"
+    }
 
 }
