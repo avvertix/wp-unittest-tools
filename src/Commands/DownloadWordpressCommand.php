@@ -67,7 +67,7 @@ class DownloadWordpressCommand extends Command
         $output->writeln( 'Extracting Wordpress '. $wp_version .'...' );
 
         $zip = new \ZipArchive;
-        if ($zip->open( $this->getRealPath( './tmp/wordpress.zip' ) ) === TRUE) {
+        if ($zip->open( $this->getRealPath( './tmp/wordpress-'.$wp_version.'.zip' ) ) === TRUE) {
             $zip->extractTo( $this->getRealPath( './tmp/') );
             $zip->close();
         } else {
