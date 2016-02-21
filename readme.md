@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/avvertix/wp-unittest-tools.svg?branch=master)](https://travis-ci.org/avvertix/wp-unittest-tools)
+
 # Wordpress UnitTest tools
 
 This project serves as command line to enable the download of the Wordpress Unittests helper functions and setup the environment for executing your plugin Unit Tests
