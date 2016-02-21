@@ -15,6 +15,10 @@
 		}
     },
     
+    "autoload-dev" : {
+        "classmap": [ "./tests/" ]
+    },
+    
     "require": {
         "jyxo/php" : "~3.1.0",
         "seld/jsonlint": "1.*",

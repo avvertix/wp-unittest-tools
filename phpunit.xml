@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php"
+    backupGlobals="false"
+    colors="true"
+    convertErrorsToExceptions="true"
+    convertNoticesToExceptions="true"
+    convertWarningsToExceptions="true"
+    syntaxCheck="true"
+    debug="true"
+    verbose="true">
+	<testsuites>
+		<!-- Default test suite to run all tests -->
+		<testsuite>
+			<directory suffix=".php">./tests</directory>
+		</testsuite>
+	</testsuites>
+    
+    <php>
+        <ini name="error_reporting" value="E_ALL"/>
+        <ini name="display_errors" value="1"/>
+        <ini name="display_startup_errors" value="1"/>
+    </php>
+</phpunit>
