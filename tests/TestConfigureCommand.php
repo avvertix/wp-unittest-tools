@@ -12,7 +12,7 @@ class TestConfigureCommand extends \PHPUnit_Framework_TestCase
     /**
      * Test if the configure command execute all the steps and create the correct files
      */
-    public function testConfigureCommand()
+    public function testCommandExecution()
     {
 
         $application = new WpUnitToolsApplication('Wordpress Unit Test Tools', '@package_version@');

@@ -12,7 +12,7 @@ class TestStubsCommand extends \PHPUnit_Framework_TestCase
     /**
      * Test if the stubs command create the correct files
      */
-    public function testStubsCommand()
+    public function testCommandExecution()
     {
 
         $application = new WpUnitToolsApplication('Wordpress Unit Test Tools', '@package_version@');
