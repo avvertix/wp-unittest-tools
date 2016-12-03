@@ -20,6 +20,7 @@
     },
     
     "require": {
+        "php": "^7.0",
         "jyxo/php" : "~4.2.0",
         "seld/jsonlint": "~1.5.0",
         "symfony/console": "~2.8.0",
