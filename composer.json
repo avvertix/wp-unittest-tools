@@ -20,16 +20,16 @@
     },
     
     "require": {
-        "jyxo/php" : "~3.1.0",
-        "seld/jsonlint": "1.*",
-        "symfony/console": "~2.8",
-        "symfony/finder": "~2.8",
-        "guzzlehttp/guzzle": "^6.1"
+        "jyxo/php" : "~4.2.0",
+        "seld/jsonlint": "~1.5.0",
+        "symfony/console": "~2.8.0",
+        "symfony/finder": "~2.8.0",
+        "guzzlehttp/guzzle": "^6.2.0"
     },
     
     "require-dev": {
-        "kherge/box": "~2.6.1",
-        "phpunit/phpunit": "~4.5"
+        "kherge/box": "~2.7.4",
+        "phpunit/phpunit": "~5.7.0"
     },
     
     "bin": [ "bin/wptesttools.phar" ],
