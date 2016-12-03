@@ -82,7 +82,7 @@ Download a Wordpress version and extracts into `./tmp/wordpress/`
 
 ## `installwp` Command
 
-Download the Wordpress unit test inclusions and the example wp-config to be used wjen running the tests. The folder used is `./tmp/`
+Download the Wordpress unit test inclusions and the example wp-config to be used when running the tests. The folder used is `./tmp/`
 
 ```
 [php] ./bin/wptesttools.phar installwp [wp-version]
