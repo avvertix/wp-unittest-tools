@@ -44,7 +44,7 @@ class InstallWordpressTestSuiteCommand extends Command
         
         $wp_obj = $this->getWordpressVersionInfo( $input->getArgument('tag') );
         
-        $wp_version = $wp_obj->version;
+        $wp_version = $wp_obj->version();
         
         $wp_tests_dir = $this->getWordpressTestsDirectory( $input );
 
@@ -55,28 +55,33 @@ class InstallWordpressTestSuiteCommand extends Command
         $includes_file = $this->getRealPath( $wp_tests_dir . 'includes/includes-'. $wp_version .'.html' );
         $includes_directory = $this->getRealPath( $wp_tests_dir . 'includes/' );
         
-        if( !$this->isDir( $includes_directory ) ){
+        if( !$this->isDir( $includes_directory ) )
+        {
             $this->createDir( $includes_directory );
         }
         
-        if( !$this->isFile($includes_file) ){
-            $this->downloadTo( $wp_obj->phpunit_includes_source, $includes_file );
+        if( !$this->isFile($includes_file) )
+        {
+            $this->downloadTo( $wp_obj->phpunitIncludesUrl(), $includes_file );
         }
         
         preg_match_all( '/^.*li.*href="(.*)".*$/m', file_get_contents( $includes_file ), $matches);
         
-        if( empty($matches) || !empty($matches) && empty($matches[1]) ){
+        if( empty($matches) || !empty($matches) && empty($matches[1]) )
+        {
             throw new Exception("Cannot retrieve wordpress phpunit includes list", 20);
         }
         
-        $files = array_filter($matches[1], function($el){
+        $files = array_filter($matches[1], function($el)
+        {
             return !empty($el) && $el[0] !== '.';
         });
         
         // TODO: this will be the case to use a ProgressBar
         
-        foreach ($files as $file) {
-            $this->downloadTo( $wp_obj->phpunit_includes_source . $file, $includes_directory . $file );
+        foreach ($files as $file)
+        {
+            $this->downloadTo( $wp_obj->phpunitIncludesUrl() . $file, $includes_directory . $file );
         }
 
         
@@ -84,7 +89,7 @@ class InstallWordpressTestSuiteCommand extends Command
         
         $output->writeln( 'Downloading wp-tests-config.php file...' );
 
-        $this->downloadTo( $wp_obj->example_config, $wp_tests_dir . '/wp-tests-config.php' );
+        $this->downloadTo( $wp_obj->exampleConfigUrl(), $wp_tests_dir . '/wp-tests-config.php' );
         
         
         $output->writeln( 'Wordpress '. $wp_version .' Test Stuite configuration completed' );

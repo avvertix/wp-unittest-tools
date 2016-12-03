@@ -48,21 +48,18 @@ class DownloadWordpressCommand extends Command
         $wp_core_dir = $this->getWordpressCoreDirectory( $input );
         
         
-        $wp_version = $wp_obj->version;
-        $wp_version_tag = $wp_obj->tag;
+        $wp_version = $wp_obj->version();
+        $wp_version_tag = $wp_obj->tag();
 
         
         $client = new \GuzzleHttp\Client();
         
-        if( !$this->isFile('./tmp/wordpress-'.$wp_version.'.zip' ) ){
+        if( !$this->isFile('./tmp/wordpress-'.$wp_version.'.zip' ) )
+        {
             $output->writeln( 'Downloading Wordpress '. $wp_version .'...' );
         
-            $this->downloadTo( $wp_obj->package, $this->getRealPath( './tmp/wordpress-'.$wp_version.'.zip' ) );
+            $this->downloadTo( $wp_obj->package(), $this->getRealPath( './tmp/wordpress-'.$wp_version.'.zip' ) );
         }
-        
-        // if( $res->getStatusCode() !== 200 ){
-        //     throw new \Exception("Cannot retrieve Wordpress $wp_version distributable. Error " . $res->getStatusCode() . ' - ' . $res->getReasonPhrase(), 1);
-        // }
 
         $output->writeln( 'Extracting Wordpress '. $wp_version .'...' );
 
