@@ -21,7 +21,7 @@ class TestConfigureCommand extends \PHPUnit_Framework_TestCase
         $commandTester = new CommandTester($command);
         $commandTester->execute(array(
             'command'       => $command->getName(),
-            'tag' => '4.6.1'
+            'tag' => '4.4.2'
         ));
         
         $this->assertEquals(0, $commandTester->getStatusCode());
