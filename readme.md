@@ -8,6 +8,7 @@ This project serves as command line to enable the download of the Wordpress Unit
 This suite is heavily inspired by the [WordPress REST API plugin](https://github.com/WP-API/WP-API) [install-wp-test.sh](https://github.com/WP-API/WP-API/blob/develop/bin/install-wp-tests.sh) shell script. 
 That script was a great source to learn how to unittest Wordpress plugins.
 
+Compatible with Wordpress 4.4.2
 
 ## What?
 
