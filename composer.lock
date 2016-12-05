@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44a0b4d8612b40f1f81c7f713281af33",
-    "content-hash": "d20c8a1931be4bfacf6e36700330035d",
+    "hash": "ccd084987c6432006a068de6840f4f2a",
+    "content-hash": "4f731e6ae2be59be3c6758bac3862f5b",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -177,68 +177,6 @@
                 "uri"
             ],
             "time": "2016-06-24 23:00:38"
-        },
-        {
-            "name": "jyxo/php",
-            "version": "v4.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jyxo/php.git",
-                "reference": "d6bff7113adb61ad5c59631bee6c597a4c67e629"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jyxo/php/zipball/d6bff7113adb61ad5c59631bee6c597a4c67e629",
-                "reference": "d6bff7113adb61ad5c59631bee6c597a4c67e629",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.0.0"
-            },
-            "require-dev": {
-                "jakub-onderka/php-parallel-lint": "^0.9.2",
-                "phpunit/phpunit": "^5.2.1"
-            },
-            "suggest": {
-                "ext-curl": "To use Jyxo\\Rpc client/server or Jyxo\\Webdav client",
-                "ext-imap": "To use Jyxo\\Mail\\Parser",
-                "ext-json": "To use Jyxo\\Rpc\\Json client/server or Jyxo\\FirePHP logger",
-                "ext-xmlrpc": "To use Jyxo\\Rpc\\Xml client/server",
-                "guzzlehttp/guzzle": "To use Jyxo\\Webdav client"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Jyxo\\": [
-                        "Jyxo/"
-                    ]
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ondřej Nešpor"
-                },
-                {
-                    "name": "Jaroslav Hanslík"
-                }
-            ],
-            "description": "Jyxo PHP Library",
-            "homepage": "http://jyxo.github.com/php/",
-            "keywords": [
-                "WebDAV",
-                "beholder",
-                "gettext",
-                "jyxo",
-                "php",
-                "rpc",
-                "shell",
-                "svn"
-            ],
-            "time": "2016-10-03 11:12:42"
         },
         {
             "name": "psr/http-message",
