@@ -48,10 +48,13 @@ trait InteractWithHttp
     /**
      * Download all the files and sub-folder from a web page that 
      * lists SVN handled file entries
+     * 
+     * @param string $listUrl the web page that contains the list of files/folders
+     * @param string $destinationPath the folder on the filesystem for storing the files
+     * @param string $tempListingFile the path of the temporary file used to store the list of files to be downloaded. Default null
      */
-    protected function downloadFromList($listUrl, $destinationPath, $tempListingFile)
+    protected function downloadFromList($listUrl, $destinationPath, $tempListingFile = null)
     {
-
         if( !$this->isDir( $destinationPath ) )
         {
             $this->createDir( $destinationPath );
@@ -80,7 +83,14 @@ trait InteractWithHttp
         
         foreach ($files as $file)
         {
-            $this->downloadTo( $listUrl . $file, $destinationPath . $file );
+            if(strpos($file, '/') !== false)
+            {
+                $this->downloadFromList($listUrl . $file, $destinationPath . $file);
+            }
+            else 
+            {
+                $this->downloadTo( $listUrl . $file, $destinationPath . $file );
+            }
         }
 
     }

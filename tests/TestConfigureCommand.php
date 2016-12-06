@@ -12,8 +12,8 @@ class TestConfigureCommand extends \PHPUnit_Framework_TestCase
     public function wordpress_version_provider(){
         return array(
             array('4.4.2'),
-            // array('4.5.3'),
-            // array('4.6.1'),
+            array('4.5.3'),
+            array('4.6.1'),
         );
     }
 

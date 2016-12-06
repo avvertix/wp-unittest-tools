@@ -77,35 +77,6 @@ trait InteractWithWordpress
 
         $this->downloadFromList($wp->phpunitIncludesUrl(), $includes_directory, $includes_file);
 
-        // if( !$this->isDir( $includes_directory ) )
-        // {
-        //     $this->createDir( $includes_directory );
-        // }
-        
-        // if( !$this->isFile($includes_file) )
-        // {
-        //     $this->downloadTo( $wp->phpunitIncludesUrl(), $includes_file );
-        // }
-        
-        // preg_match_all( '/^.*li.*href="(.*)".*$/m', file_get_contents( $includes_file ), $matches);
-        
-        // if( empty($matches) || !empty($matches) && empty($matches[1]) )
-        // {
-        //     throw new Exception("Cannot retrieve wordpress phpunit includes list", 20);
-        // }
-        
-        // $files = array_filter($matches[1], function($el)
-        // {
-        //     return !empty($el) && $el[0] !== '.';
-        // });
-        
-        // // TODO: this will be the case to use a ProgressBar
-        
-        // foreach ($files as $file)
-        // {
-        //     $this->downloadTo( $wp->phpunitIncludesUrl() . $file, $includes_directory . $file );
-        // }
-
     }
     
     
