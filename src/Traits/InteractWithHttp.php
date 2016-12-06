@@ -44,6 +44,46 @@ trait InteractWithHttp
         
         return $res;
     }
+
+    /**
+     * Download all the files and sub-folder from a web page that 
+     * lists SVN handled file entries
+     */
+    protected function downloadFromList($listUrl, $destinationPath, $tempListingFile)
+    {
+
+        if( !$this->isDir( $destinationPath ) )
+        {
+            $this->createDir( $destinationPath );
+        }
+
+        if(is_null($tempListingFile)){
+            $tempListingFile = $destinationPath . '/temporary_listing_cache.html';
+        }
+        
+        if( !$this->isFile($tempListingFile) )
+        {
+            $this->downloadTo( $listUrl, $tempListingFile );
+        }
+
+        preg_match_all( '/^.*li.*href="(.*)".*$/m', file_get_contents( $tempListingFile ), $matches);
+        
+        if( empty($matches) || !empty($matches) && empty($matches[1]) )
+        {
+            throw new Exception("Cannot retrieve wordpress phpunit includes list", 20);
+        }
+        
+        $files = array_filter($matches[1], function($el)
+        {
+            return !empty($el) && $el[0] !== '.';
+        });
+        
+        foreach ($files as $file)
+        {
+            $this->downloadTo( $listUrl . $file, $destinationPath . $file );
+        }
+
+    }
     
     
 }
